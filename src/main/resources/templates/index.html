@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Listado</title>
+    
+    
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+    
+</head>
+<body>
+	
+	<div class="container">
+        <!-- Botón "Agregar Empleado" con estilo Bootstrap -->
+        <div class="card-footer">
+			<a href="/nuevo" class="btn btn-primary">Agregar Empleado</a>
+		</div>
+        
+        <br><br>
+    
+        <table>
+			
+            <tr>
+                <th>IDEmpleado</th>
+                <th>Apellidos</th>
+                <th>Nombres</th>
+                <th>Edad</th>
+                <th>Sexo</th>
+                <th>Salario</th>
+            </tr>
+            
+            <tr th:each="reg : ${listaE}">
+				
+				<td th:text="${reg.IdEmpleado}"> </td>
+				<td th:text="${reg.apellidos}"> </td>
+				<td th:text="${reg.nombres}"> </td>
+				<td th:text="${reg.edad}"> </td>
+				<td th:text="${reg.sexo}"> </td>
+				<td th:text="${reg.salario}"> </td>
+                
+            </tr>
+            
+      
+        </table>
+    </div>
+	
+</body>
+</html>
